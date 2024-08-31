@@ -48,3 +48,20 @@ public class Reunion {
         return asistentes;
     }
 }
+
+ public void eliminarContacto(String nombre, String telefono) {
+        for (Contacto contacto : contactos) {
+            if (contacto.getNombre().equals(nombre) && contacto.getTelefono().equals(telefono)) {
+                contactos.remove(contacto);
+                break;
+            }
+        }
+    }
+
+ public void agregarContacto(Contacto contacto) {
+        if (validarContactoRepetido(contacto.getNombre(), contacto.getTelefono())) {
+            mostrarMensaje("Error, el contacto con nombre " + contacto.getNombre() + " y teléfono " + contacto.getTelefono() + " ya está creado.");
+        } else {
+            contactos.add(contacto);
+        }
+    }
