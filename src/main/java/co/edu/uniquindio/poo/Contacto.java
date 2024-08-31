@@ -57,3 +57,13 @@ public class Contacto {
         this.email = email;
     }
 }
+
+public boolean validarContactoRepetido(String nombre, String telefono) {
+    boolean contactoRepetido= false;
+    for (Estudiante estudiante : estudiantes) {
+        if (estudiante.getNombre().equals(nombre) && estudiante.getTelefono().equals(telefono)) {
+            contactoRepetido= true;
+        }
+    }
+    return contactoRepetido;
+}
